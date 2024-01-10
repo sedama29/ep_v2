@@ -295,6 +295,31 @@ const Home = () => {
       <TouchableOpacity onPress={showDataAlert} style={styles.alertButton}>
         <Text style={styles.alertText}>({totalCount}) Alert!</Text>
       </TouchableOpacity>
+      
+      <Modal
+        animationType="slide"
+        transparent={false}
+        visible={isModalVisible}
+        onRequestClose={() => setIsModalVisible(false)}
+      >
+        <View style={styles.modalView}>
+          <TabView
+            navigationState={{ index, routes }}
+            renderScene={renderScene}
+            onIndexChange={setIndex}
+            initialLayout={initialLayout}
+
+          />
+          <TouchableOpacity
+            style={styles.closeButton}
+            onPress={() => setIsModalVisible(false)}
+          >
+            <Text style={{ color: 'white' }}>OK</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
+
+
 
     <Modal
         visible={isPickerModalVisible}
