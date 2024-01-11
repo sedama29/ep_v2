@@ -1,9 +1,6 @@
-const { getDefaultConfig } = require('expo/metro-config');
-const path = require('path');
+const { getDefaultConfig } = require('@expo/metro-config');
 
-const config = getDefaultConfig(__dirname);
+const defaultConfig = getDefaultConfig(__dirname);
+defaultConfig.resolver.assetExts.push('cjs');
 
-// Add extra file extensions for asset bundling
-config.resolver.assetExts.push('sqlite');
-
-module.exports = config;
+module.exports = defaultConfig;

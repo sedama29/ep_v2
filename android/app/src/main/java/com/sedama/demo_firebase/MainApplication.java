@@ -1,4 +1,4 @@
-package com.sedama.ep;
+package com.sedama.demo_firebase;
 
 import android.app.Application;
 import android.content.res.Configuration;

@@ -1,4 +1,4 @@
-rootProject.name = 'ep_v1'
+rootProject.name = 'demo_firebase'
 
 apply from: new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim(), "../scripts/autolinking.gradle");
 useExpoModules()

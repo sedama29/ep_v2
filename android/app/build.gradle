@@ -81,9 +81,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace 'com.sedama.ep'
+    namespace 'com.sedama.demo_firebase'
     defaultConfig {
-        applicationId 'com.sedama.ep'
+        applicationId 'com.sedama.demo_firebase'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

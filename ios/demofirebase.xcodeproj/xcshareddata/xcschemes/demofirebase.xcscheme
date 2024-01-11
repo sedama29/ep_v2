@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "epv1.app"
-               BlueprintName = "epv1"
-               ReferencedContainer = "container:epv1.xcodeproj">
+               BuildableName = "demofirebase.app"
+               BlueprintName = "demofirebase"
+               ReferencedContainer = "container:demofirebase.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "epv1Tests.xctest"
-               BlueprintName = "epv1Tests"
-               ReferencedContainer = "container:epv1.xcodeproj">
+               BuildableName = "demofirebaseTests.xctest"
+               BlueprintName = "demofirebaseTests"
+               ReferencedContainer = "container:demofirebase.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "epv1.app"
-            BlueprintName = "epv1"
-            ReferencedContainer = "container:epv1.xcodeproj">
+            BuildableName = "demofirebase.app"
+            BlueprintName = "demofirebase"
+            ReferencedContainer = "container:demofirebase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "epv1.app"
-            BlueprintName = "epv1"
-            ReferencedContainer = "container:epv1.xcodeproj">
+            BuildableName = "demofirebase.app"
+            BlueprintName = "demofirebase"
+            ReferencedContainer = "container:demofirebase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
