@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   
   dropdownContainer: {
-    marginTop: 40, 
+    marginTop: 160, 
     marginLeft: 10, 
     marginRight: 10, 
     padding: 5,
@@ -135,8 +135,8 @@ export const styles = StyleSheet.create({
 
   modalView: {
     flex: 1,
-    marginTop: 20,
-    padding:10,
+    marginTop: 40,
+    padding:20,
     borderRadius: 5,
 
   },
