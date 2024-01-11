@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
@@ -8,21 +10,28 @@ export default function LoginPage() {
   const [userInfo, setUserInfo] = useState(null);
 
   const [request, response, promptAsync] = Google.useAuthRequest({
-    redirectUri: 'https://auth.expo.io/@sedama/demo_firebase', 
-    expoClientId: '967080811201-hi7kf09nmddbuqc6b8nc3n56lr8dqvv7.apps.googleusercontent.com',
-    iosClientId: '967080811201-bulinrrf63qa5lblrr1ruc0vii1hi8ke.apps.googleusercontent.com',
-    androidClientId: '967080811201-bulinrrf63qa5lblrr1ruc0vii1hi8ke.apps.googleusercontent.com',
+    redirectUri: 'https://auth.expo.io/@sedama/ep_v1', 
+    expoClientId: '818720577294-6pb4fdd87m9t9bd04lvtf07cqd45ffs8.apps.googleusercontent.com',
+    iosClientId: '818720577294-0l4p39cugsuu1c8pidllbp3r5hr1tvrq.apps.googleusercontent.com',
+    androidClientId: '818720577294-0l4p39cugsuu1c8pidllbp3r5hr1tvrq.apps.googleusercontent.com',
+    scopes: ['profile', 'email']
   });
 
   useEffect(() => {
+    console.error("Response",response);
+
       if (response?.type === 'success') {
           getUserInfo(response.authentication.accessToken);
       } else if (response?.type === 'error') {
           console.error('Authentication error:', response.error);
       }
+      else {
+        console.error("Response",response);
+      }
   }, [response]);
 
   const getUserInfo = async (token) => {
+    console.error("token", token)
       try {
           const userInfoResponse = await fetch('https://www.googleapis.com/userinfo/v2/me', {
               headers: { Authorization: `Bearer ${token}` },
@@ -39,7 +48,7 @@ export default function LoginPage() {
       <View style={styles.container}>
           {!userInfo ? (
               <Button
-                  title='Sign in with Google'
+                  title='Sign in with Google v2'
                   disabled={!request}
                   onPress={() => promptAsync()}
               />
@@ -74,3 +83,4 @@ const styles = StyleSheet.create({
       marginTop: 10,
   },
 });
+

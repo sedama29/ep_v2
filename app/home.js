@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, View, Text, Image, Dimensions, Modal, TouchableOpacity, FlatList } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
 import { styles } from './style/style_home';
 import Data90DaysView from './data/Data90DaysView';
 import ContactDetailsView from './data/ContactDetailsView';
