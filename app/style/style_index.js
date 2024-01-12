@@ -22,7 +22,8 @@ export const styles = StyleSheet.create({
     marginBottom: 50,
     marginLeft: 10,
     marginRight: 10,
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Helvetica',
   },
   googleButton: {
     backgroundColor: 'blue',
@@ -33,12 +34,13 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontSize: 16,
+    fontFamily: 'Helvetica',
   },
   agreementText: {
     textAlign: 'center',
     marginTop: 50,
     marginHorizontal: 30,
-    color: 'white'
+    color: 'white',
   },
   hyperlink: {
     color: 'blue',

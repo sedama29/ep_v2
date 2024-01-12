@@ -3,8 +3,8 @@ import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-nati
 import { VictoryChart, VictoryTheme, VictoryAxis, VictoryLine, VictoryArea, VictoryContainer } from 'victory-native';
 import axios from 'axios';
 import * as d3 from 'd3';
-import { styles } from './style/style_graph_view';
-import CustomBackground from './Graph/CustomBackground';
+import { styles } from '../style/style_graph_view';
+import CustomBackground from './CustomBackground';
 
 const chartPadding = { top: 10, bottom: 50, left: 50, right: 50 };
 
@@ -145,7 +145,7 @@ const GraphView = ({ siteId }) => {
         style={styles.legendToggleButton}
         onPress={() => setShowLegend(!showLegend)}
       >
-        <Text>...</Text>
+        <Text style = {{fontSize: 14,fontWeight: 'bold'}}>⋮</Text>
       </TouchableOpacity>
 
   

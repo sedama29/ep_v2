@@ -23,8 +23,6 @@ export default function App() {
       webClientId: '967080811201-hi7kf09nmddbuqc6b8nc3n56lr8dqvv7.apps.googleusercontent.com',
       iosClientId: '967080811201-bulinrrf63qa5lblrr1ruc0vii1hi8ke.apps.googleusercontent.com',
       androidClientId: '967080811201-bulinrrf63qa5lblrr1ruc0vii1hi8ke.apps.googleusercontent.com',
-    },{
-        projectNameForProxy:'@sedama/demo_firebase'
     });
 
     useEffect(() => {

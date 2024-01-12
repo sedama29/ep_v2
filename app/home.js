@@ -3,7 +3,7 @@ import { ScrollView, View, Text, Image, Dimensions, Modal, TouchableOpacity, Fla
 import { styles } from './style/style_home';
 import Data90DaysView from './data/Data90DaysView';
 import ContactDetailsView from './data/ContactDetailsView';
-import GraphView from './GraphView';
+import GraphView from './Graph/GraphView';
 import { FontAwesome } from '@expo/vector-icons';
 import { TabView, SceneMap} from 'react-native-tab-view';
 import MapImage1 from '../assets/images/map_images/JEF.jpg';
@@ -343,10 +343,10 @@ const Home = () => {
           style={styles.pickerButton}
         >
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',}}>
-            <Text style={{ color: 'blue' }}>
+            <Text style={{ color: 'blue' , padding: 5}}>
               {selectedSite ? siteOptions.find(item => item.match(/\(([^)]+)\)/)?.[1] === selectedSite) : 'Select Site'}
             </Text>
-            <FontAwesome name="caret-down" size={14} color="grey" />
+            <FontAwesome name="caret-down" size={14} color="grey"  style={{ right:5 }}/>
           </View>
         </TouchableOpacity>
       </View>
