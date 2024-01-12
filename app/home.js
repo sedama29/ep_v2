@@ -6,12 +6,11 @@ import ContactDetailsView from './data/ContactDetailsView';
 import GraphView from './GraphView';
 import { FontAwesome } from '@expo/vector-icons';
 import { TabView, SceneMap} from 'react-native-tab-view';
-import MapImage1 from '../assets/images/sub_images/JEF_1_2.jpg';
-import MapImage2 from '../assets/images/sub_images/GAL_2_2.jpg';
-import MapImage3 from '../assets/images/sub_images/BRA_3_2.jpg';
-import MapImage4 from '../assets/images/sub_images/NUE_4_2.jpg';
-import MapImage5 from '../assets/images/sub_images/CAM_5_2.jpg';
-
+import MapImage1 from '../assets/images/map_images/JEF.jpg';
+import MapImage2 from '../assets/images/map_images/GAL.jpg';
+import MapImage3 from '../assets/images/map_images/BRA.jpg';
+import MapImage4 from '../assets/images/map_images/NUE.jpg';
+import MapImage5 from '../assets/images/map_images/CAM.jpg';
 
 const initialLayout = { width: Dimensions.get('window').width };
 
@@ -44,11 +43,11 @@ const Home = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const touchAreas = [
-    { x: [130, 150], y: [290, 310], image: MapImage5 },
-    { x: [125, 145], y: [185, 205], image: MapImage4 },
-    { x: [240, 260], y: [95, 115], image: MapImage3 },
-    { x: [265, 285], y: [70, 90], image: MapImage2 },
-    { x: [310, 330], y: [50, 70], image: MapImage1 },
+    { x: [130, 150], y: [320, 340], image: MapImage5 },
+    { x: [125, 145], y: [205, 225], image: MapImage4 },
+    { x: [240, 260], y: [105, 125], image: MapImage3 },
+    { x: [265, 285], y: [85, 105], image: MapImage2 },
+    { x: [310, 330], y: [55, 75], image: MapImage1 },
   ];
 
   const handleMapPress = (evt) => {
@@ -71,27 +70,27 @@ const Home = () => {
   const specificTouchAreas = {
     MapImage1: [
       { x: [135, 155], y: [165, 185], site: 'JEF012' },
-      { x: [180, 200], y: [145, 165], site: 'JEF009' },
+      { x: [180, 200], y: [142, 162], site: 'JEF009' },
       { x: [205, 225], y: [140, 160], site: 'JEF013' },
     ],
     MapImage2: [
       { x: [235, 255], y: [75, 95], site: 'GAL038' },
-      { x: [170, 190], y: [130, 150], site: 'GAL037' },
-      { x: [100, 120], y: [220, 240], site: 'GAL036' },    
+      { x: [168, 188], y: [133, 153], site: 'GAL037' },
+      { x: [95, 115], y: [220, 240], site: 'GAL036' },    
     ],
     MapImage3: [
       { x: [230, 250], y: [65, 85], site: 'BRA012' },
       { x: [215, 235], y: [85, 105], site: 'BRA011' },
-      { x: [110, 130], y: [250, 270], site: 'BRA010' },    
+      { x: [108, 128], y: [255, 275], site: 'BRA010' },    
     ],
     MapImage4: [
-      { x: [190, 210], y: [110, 130], site: 'NUE014' },
+      { x: [187, 207], y: [110, 130], site: 'NUE014' },
       { x: [165, 185], y: [180, 200], site: 'NUE015' },
-      { x: [150, 170], y: [245, 255], site: 'NUE016' },    
+      { x: [150, 170], y: [242, 262], site: 'NUE016' },    
     ],
     MapImage5: [
       { x: [170, 190], y: [95, 115], site: 'CAM011' },
-      { x: [175, 195], y: [150, 170], site: 'CAM030' },
+      { x: [178, 198], y: [150, 170], site: 'CAM030' },
       { x: [185, 205], y: [200, 220], site: 'CAM010' },    
     ],
   };
@@ -133,8 +132,8 @@ const Home = () => {
 
     // Common touch area (if needed)
     const commonTouchArea = {
-      x: [280, 350],
-      y: [290, 350],
+      x: [270, 350],
+      y: [270, 350],
     };
 
     if (
@@ -403,7 +402,7 @@ const Home = () => {
         <View style={styles.modalView_2}>
           <TouchableOpacity onPress={handleMapPress} style={{ width: '100%', height: '50%', justifyContent: 'center', alignItems: 'center' }}>
             <Image
-              source={require('../assets/images/sub_images/map_labels.jpg')}
+              source={require('../assets/images/map_images/map_main.jpg')}
               resizeMode="contain"
             />
           </TouchableOpacity>
