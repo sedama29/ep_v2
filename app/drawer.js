@@ -1,7 +1,9 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
+import { Linking } from 'react-native';
+
 import Home from './home';
 import About from './legend/About';
 import Tglo from './legend/Tglo';
@@ -25,7 +27,8 @@ const CustomHeader = ({ title, navigation }) => {
   );
 };
 
-const MyDrawer = () => {
+
+export default function App() {
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -37,11 +40,10 @@ const MyDrawer = () => {
     >
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="About..." component={About} />
-      <Drawer.Screen name="Texas General Land Office" component={Tglo} />
+      <Drawer.Screen
+        name="Texas General Land Office"
+        component={Tglo}
+      />
     </Drawer.Navigator>
   );
-};
-
-export default function App() {
-  return <MyDrawer />;
 }
