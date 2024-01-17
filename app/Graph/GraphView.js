@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { VictoryChart, VictoryTheme, VictoryAxis, VictoryLine, VictoryArea, VictoryContainer } from 'victory-native';
+import { VictoryChart, VictoryTheme, VictoryAxis, VictoryLine, VictoryArea, VictoryContainer, VictoryZoomContainer} from 'victory-native';
 import axios from 'axios';
 import * as d3 from 'd3';
 import { styles } from '../style/style_graph_view';
-import CustomBackground from './CustomBackground';
+// import CustomBackground from './CustomBackground';
+import  CustomZoomBackgroundContainer from './CustomZoomBackgroundContainer';
+
 
 const chartPadding = { top: 10, bottom: 50, left: 50, right: 50 };
 
@@ -52,6 +54,9 @@ const GraphView = ({ siteId }) => {
   const [data, setData] = useState({});
   const [visiblePlots, setVisiblePlots] = useState({});
   const [showLegend, setShowLegend] = useState(false);
+  const [startDate, setStartDate] = useState(null); 
+  const [endDate, setEndDate] = useState(null); 
+
   const screenWidth = 400;
   const screenHeight = 300;
   const today = new Date();
@@ -62,29 +67,56 @@ const GraphView = ({ siteId }) => {
   const formatDate_2 = d3.timeFormat("%Y-%m-%d %H:%M:%S");
   const earlierTodayFormatted = formatDate_2(earlierToday);
   const laterTodayFormatted = formatDate_2(laterToday);
+  
+  const handleZoom = (domain) => {
+    if (domain.x) {
+      // Check if domain.x is within the data range
+      const [minDate, maxDate] = [startDate, endDate]; // Your data's start and end dates
+      if (domain.x[0] >= minDate && domain.x[1] <= maxDate) {
+        setXDomain(domain.x);
+      }
+    }
+  };
+  
+
 
 
   useEffect(() => {
     const fetchData = async () => {
       if (siteId) {
         try {
-          // Fetch data from the API
+          
           const response = await axios.get(`https://enterococcus.today/waf/nowcast/TX/eCount_stat_app_2/${siteId}.csv`);
           
           // Parse the CSV data
           const parseDate = d3.timeParse("%Y-%m-%d");
-          const newData = d3.csvParse(response.data, (row) => {
-            const newRow = { date: parseDate(row.date) };
-            Object.keys(row).forEach(key => {
-              if (key !== 'date') {
-                newRow[key] = row[key] ? +row[key] : null;
+          // After parsing the CSV data
+          const parsedData = d3.csvParse(response.data, (row) => {
+          const newRow = { date: parseDate(row.date) };
+          Object.keys(row).forEach(key => {
+            if (key !== 'date' && row[key] !== '') {
+              const value = parseFloat(row[key]);
+              if (!isNaN(value)) {
+                newRow[key] = value;
               }
-            });
-            return newRow;
+            }
           });
+          return newRow;
+        });
+
+        const filteredData = parsedData.filter(d => d.date && Object.keys(d).every(k => !isNaN(d[k])));
+
+        console.log("Filtered Data:", filteredData);
+
+
+          const minDate = d3.min(filteredData, (d) => d.date);
+          const maxDate = d3.max(filteredData, (d) => d.date);
+          setStartDate(minDate);
+          setEndDate(maxDate);
+
   
           // Transform the data into the desired format
-          const transformedData = newData.reduce((acc, row) => {
+          const transformedData = filteredData.reduce((acc, row) => {
             Object.keys(row).forEach(key => {
               if (key !== 'date') {
                 if (!acc[key]) acc[key] = [];
@@ -93,6 +125,9 @@ const GraphView = ({ siteId }) => {
             });
             return acc;
           }, {});
+          console.log("Transformed Data:", transformedData);
+          
+
   
           // Set the fetched and transformed data to state
           setData(transformedData);
@@ -108,7 +143,6 @@ const GraphView = ({ siteId }) => {
   
         } catch (error) {
           console.error('Error fetching graph data:', error);
-          // Handle any errors here, such as setting an error state
         }
       }
     };
@@ -135,7 +169,7 @@ const GraphView = ({ siteId }) => {
   const togglePlot = (key) => {
     setVisiblePlots(prevState => ({
       ...prevState,
-      [key]: !prevState[key], // Correctly toggle the state
+      [key]: !prevState[key],
     }));
   };
   
@@ -147,7 +181,6 @@ const GraphView = ({ siteId }) => {
       >
         <Text style = {{fontSize: 14,fontWeight: 'bold'}}>⋮</Text>
       </TouchableOpacity>
-
   
       {Object.keys(data).length > 0 && (
         <VictoryChart
@@ -156,8 +189,15 @@ const GraphView = ({ siteId }) => {
           padding={chartPadding}
           width={screenWidth}
           height={screenHeight}
-          containerComponent={<CustomBackground />}
+          containerComponent={
+            <CustomZoomBackgroundContainer 
+              zoomDimension="x"
+              onZoom={handleZoom}
+            />
+          }
+          domain={{ x: [startDate, endDate] }}  
         >
+          
           <VictoryAxis
             scale="time"
             tickValues={tickValues}

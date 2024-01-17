@@ -4,12 +4,10 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       borderWidth: 1,
-      fontFamily: 'Helvetica',
     },
     contentContainer: {
       justifyContent: 'center',
       alignItems: 'center',
-      fontFamily: 'Helvetica',
     },
     axisStyles: {
       axis: { stroke: '#756f6a' },
@@ -29,7 +27,6 @@ export const styles = StyleSheet.create({
       height: 210, // Adjust as needed
       padding: 10, 
       borderRadius: 5,
-      fontFamily: 'Helvetica',
     },
 
     legendItem: {
@@ -37,7 +34,7 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       fontSize: 10, // Reduced font size
       marginVertical: 2, // Adjusted margin
-      fontFamily: 'Helvetica',
+      // fontFamily: 'Helvetica',
 
     },
     legendToggleButton: {
@@ -47,7 +44,7 @@ export const styles = StyleSheet.create({
       backgroundColor: 'lightgray', // Temporary background for debugging
       padding: 10, 
       zIndex: 1, 
-      fontFamily: 'Helvetica',
+      // fontFamily: 'Helvetica',
     },
 
     checkboxContainer: {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Linking } from 'react-native';
 import axios from 'axios';
 import Papa from 'papaparse';
 import { styles } from '../style/style_home'; // Adjust the path as needed

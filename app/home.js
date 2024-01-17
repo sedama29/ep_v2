@@ -346,7 +346,7 @@ const Home = () => {
             <Text style={{ color: 'blue' , padding: 5}}>
               {selectedSite ? siteOptions.find(item => item.match(/\(([^)]+)\)/)?.[1] === selectedSite) : 'Select Site'}
             </Text>
-            <FontAwesome name="caret-down" size={14} color="grey"  style={{ right:5 }}/>
+            <FontAwesome name="caret-down" size={20} color="black"  style={{ right:5 }}/>
           </View>
         </TouchableOpacity>
       </View>

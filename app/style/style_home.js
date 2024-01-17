@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     // height: '100%',
     // backgroundColor:'white',
     borderRadius: 5,
-    fontFamily: 'Helvetica',
 
   },
   pickerContainer: {
@@ -18,7 +17,6 @@ export const styles = StyleSheet.create({
     elevation: 3,
     overflow: 'hidden',
     justifyContent: 'space-between',
-    fontFamily: 'Helvetica',
   },
   
   dropdownContainer: {
@@ -36,8 +34,6 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     borderColor: 'black', // Set the border color to black
     borderWidth: 1, // Add a border width
-    fontFamily: 'Helvetica',
-
   },
   picker: {
     width: '100%',
@@ -54,8 +50,15 @@ export const styles = StyleSheet.create({
   },
   pickerText: {
     fontSize: 14,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
+
+  linkText : {
+    color: 'blue',
+    textDecorationLine: 'underline',
+
+  },
+
 
 
   container_data: {
@@ -63,7 +66,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 5,
     borderRadius: 5,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
 
   },
   container_location: {
@@ -73,7 +76,6 @@ export const styles = StyleSheet.create({
     resizeMode: 'contain',
     borderRadius: 5,
     overflow: 'hidden',
-    fontFamily: 'Helvetica',
 
   },
   container_image: {
@@ -82,7 +84,6 @@ export const styles = StyleSheet.create({
     height: 'auto', 
     borderRadius: 5,
     overflow: 'hidden',
-    fontFamily: 'Helvetica',
 
   },
   
@@ -91,7 +92,6 @@ export const styles = StyleSheet.create({
     width: '100%',
     aspectRatio: 1.5, 
     resizeMode: 'contain',
-    fontFamily: 'Helvetica',
 
   },
 
@@ -102,16 +102,16 @@ export const styles = StyleSheet.create({
     padding: 5,
     // height: 500,
     borderRadius: 5,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
 
   textSpacing: {
     marginBottom: 10,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   rowText: {
     fontWeight: 'bold',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   dataRow: {
     flexDirection: 'row',
@@ -119,7 +119,7 @@ export const styles = StyleSheet.create({
     padding: 5,
     borderBottomWidth: 1,
     borderColor: '#ddd',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   tableHeader: {
     flexDirection: 'row',
@@ -128,29 +128,29 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     // backgroundColor: '#f2f2f2',
     padding: 5,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   headerText: {
     fontWeight: 'bold',
     fontSize: 11,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   column: {
     width: '25%',
     textAlign: 'center',
     fontSize: 11,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
 
   headerText: {
     fontWeight: 'bold',
     padding: 5,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
 
   },
   rowText: {
     padding: 5,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
 
   },
 
@@ -159,8 +159,6 @@ export const styles = StyleSheet.create({
     marginTop: 40,
     padding:20,
     borderRadius: 5,
-    fontFamily: 'Helvetica',
-
   },
   closeButton: {
     alignItems: "center",
@@ -169,7 +167,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     width: '20%',
     borderRadius: 5,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   alertButton: {
     position: 'absolute',
@@ -180,34 +178,34 @@ export const styles = StyleSheet.create({
   alertText: {
     color: 'red',
     fontSize: 16,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   boldText: {
     fontWeight: 'bold',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   pickerAndDotsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   dotsButton: {
     fontSize:12,
     padding: 5,
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   modalView_2: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   imageStyle_2: {
     // Style for the image
     width: '90%',
     height: '50%',
     resizeMode: 'contain',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
   closeButton_image: {
     backgroundColor: '#ddd',
@@ -223,6 +221,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    fontFamily: 'Helvetica',
+    // fontFamily: 'Helvetica',
   },
 });

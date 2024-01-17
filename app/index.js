@@ -7,8 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import google from '../assets/images/btn_google_signin_dark_normal_web.png'
 import BWImage from '../assets/images/BW_Logo.png'
 import { styles } from './style/style_index';
-import { Link } from 'expo-router';
-
+import { Link, Redirect } from 'expo-router';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -16,13 +15,20 @@ export default function App() {
     const [userInfo, setUserInfo] = useState(null);
     const navigation = useNavigation();
 
+    const redirectUri = Platform.select({
+      ios: 'https://auth.expo.io/@sedama/demo_firebase',
+      android: 'https://auth.expo.io/@sedama/demo_firebase',
+    });
+    
+
 
     const [request, response, promptAsync] = Google.useAuthRequest({
-      redirectUri: 'https://auth.expo.io/@sedama/demo_firebase', 
+      redirectUri,
       expoClientId: '967080811201-hi7kf09nmddbuqc6b8nc3n56lr8dqvv7.apps.googleusercontent.com',
       webClientId: '967080811201-hi7kf09nmddbuqc6b8nc3n56lr8dqvv7.apps.googleusercontent.com',
-      iosClientId: '967080811201-bulinrrf63qa5lblrr1ruc0vii1hi8ke.apps.googleusercontent.com',
+      iosClientId: '967080811201-661c55ucb98a4k748t6evnt1joddd2c7.apps.googleusercontent.com',
       androidClientId: '967080811201-bulinrrf63qa5lblrr1ruc0vii1hi8ke.apps.googleusercontent.com',
+      scopes: ['profile', 'email']
     });
 
     useEffect(() => {
